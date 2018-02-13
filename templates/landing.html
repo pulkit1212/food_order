@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMF</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="myModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+{#        <button type="button" class="close" data-dismiss="modal">&times;</button>#}
+        <h4 class="modal-title"><center>Select City</center></h4>
+      </div>
+      <div class="modal-body">
+        <ul class="cities" style="text-align: center;">
+            {% for each in cities %}
+                <li style="margin: 0 6px;margin-bottom: 7px;width: 140px;display: inline-block;position: relative;">
+                    <a href='{% url "city-view" each.id %}' style="height: 70px;display: block;border-radius: 4px;border: 1px solid #dcdcdc;" class="cust_city" id="{{ each.city }}" data-city="{{ each.city }}">
+{#                    <a href='{% url "city-view" each.id %}' style="height: 70px;display: block;border-radius: 4px;border: 1px solid #dcdcdc;" class="cust_city" onclick="setValue({{ each.city }});">#}
+                        <span style="position: absolute;top: 50%;left: 0;width: 100%;color: #636363;">{{ each.get_city }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+      </div>
+{#      <div class="modal-footer">#}
+{#        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>#}
+{#      </div>#}
+    </div>
+
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+ $(document).ready(function () {
+     var city = localStorage.city;
+     console.log(city);
+     if(city == null){
+        alert('here');
+        $('#myModal').modal('show');
+     }
+
+     $('.cust_city').on('click', function () {
+         var city = $(this).attr('data-city');
+         console.log("the city is", city);
+         localStorage.city = city;
+
+     })
+
+ });
+
+</script>
+</html>

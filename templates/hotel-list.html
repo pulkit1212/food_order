@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hi.</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+
+    <div class="panel-group">
+        {% for each in list %}
+        <div class="panel panel-default">
+          <div class="panel-heading">{{ each.name }}</div>
+          <div class="panel-body">
+              <p>Opening Time : {{ each.opening_time }}</p>
+              <p>ClosingTime : {{ each.closing_time }}</p>
+              <a href="{% url 'hotel-menu' each.id %}">
+              <button type="button" class="btn btn-info">Go to Menu</button></a>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        var q = localStorage.city;
+    })
+</script>
+</html>

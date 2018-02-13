@@ -1,0 +1,407 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+{#        <link href="restaurant.css" rel="stylesheet">#}
+        <script   src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+{#        <script src="controls.js"></script>#}
+    <style>
+        li{
+    list-style:none;
+    }
+h1{
+     font-size:21px !important;
+    }
+.container{
+    padding: 15px 15px;
+}
+span.radio {
+    display: inline;
+    cursor: pointer;
+    margin: 5px;
+    padding: 15px;
+    border-radius: 3px;
+    color: #4c493f;
+}
+label.desc {
+    font-size:12px;
+    color: #777774;
+    cursor: pointer;
+    font-weight: 200;
+}
+label.restaurant-desc {
+    font-size: 11px;
+    margin-top: 10px;
+    font-weight: 200;
+}
+.type-table li {
+    color: #ff7200;
+    font-size: 14px;
+    padding: 4px 4px;
+}
+.type-table li:hover{
+    background: #f7eedc;
+    border-radius: 8px;
+    cursor:pointer;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+.restaurant-table li {
+    background: #fcf0de none repeat scroll 0 0;
+    border-left: 2px solid #fca037;
+    border-right: 2px solid #fca037;
+    border-bottom: 2px solid #fca037;
+    color: #4c493f;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px 24px;
+}
+.restaurant-table li:hover{
+    background:  #ffd089;
+    cursor:pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0 30px 0 rgba(0, 0, 0, 0.19);
+	-webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+.restaurant-table h1{
+    background: #ffeac9 none repeat scroll 0 0;
+    color: #4c493f;
+    border-left: 2px solid #fca037;
+    border-top: 2px solid #fca037;
+    border-right: 2px solid #fca037;
+    border-bottom: 2px solid #fca037;
+    font-weight: 400;
+    margin: 0;
+    padding: 19px 21px;
+    text-transform: uppercase;
+}
+.restaurant-table h3{
+    font-size:14px;
+    background: #ffeac9 none repeat scroll 0 0;
+    color: #4c493f;
+    border-left: 2px solid #fca037;
+    border-right: 2px solid #fca037;
+    border-bottom: 2px solid #fca037;
+    font-weight: 400;
+    margin: 0;
+    padding: 19px 21px;
+    text-transform: uppercase;
+}
+.restaurant-table h1 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+	text-align:left;
+}
+img.logo-small{
+    border-style:double;
+    border-width: 1px;
+    border-color: gray;
+    width: 85%;
+}
+.checkout{
+    background: #ffab35;
+}
+
+.checkout:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0 3px 0 rgba(0, 0, 0, 0.19);
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.checkout:active {
+    background: #ffd089;
+}
+
+.cart{
+    background: #fcf0de;
+    border: 2px solid #fca037;
+    margin-left: 20px;
+    position:fixed;
+    width: 28%;
+}
+
+.checkout-hr-border{
+    color: #fca037;
+    background: #fca037;
+}
+
+.cart-footer{
+    background: #ffeac9;
+}
+
+.panel-heading{
+    background: #ffeac9;
+}
+.fa.fa-check {
+    color: #2cc14f;
+}
+.fa.fa-times {
+    color: #BA5340;
+}
+.fa{
+	font-size:30px;
+}
+label{
+    display: block;
+    cursor: pointer;
+}
+.no-padding{
+	padding:0;
+}
+ul{
+	padding:0;
+}
+
+body {
+  background: #fffcf2;
+}
+    </style>
+    <script>
+        $(document).ready(function(){
+    $('.radio').first().css('background-color', '#ffab35');
+    $('.radio').click(function(){
+        $(".radio").css('background-color', 'transparent')
+        $(this).css('background-color', '#ffab35');
+    });
+});
+    </script>
+
+  </head>
+ <body>
+
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Page 1-1</a></li>
+          <li><a href="#">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Page 2</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-8 col-xs-12 no-padding">
+                    <div class="restaurant-table">
+                        <h1>
+                            <div class="row">
+                                <div class="col-sm-2 col-md-2 col-xs-2"><img src='https://www.deliveryup.com/editable/images/logos/front/22.jpg' class = "logo-small" /></div>
+                                <div class="col-sm-10 col-md-10 col-xs-10 ">
+                                805 Kabob
+                                <label class="restaurant-desc">Closes today at 11:45 PM</label>
+                                </div>
+                            </div>
+                            </h1>
+
+                        <h3><div><span class="radio" id="delivery">Delivery</span><span class="radio" id="takeout">Takeout</span></h3>
+                        <ul>
+                            <li>
+                                <label>Mini Plate</label>
+                                <label class="desc">Your choice of 1 item and 3 sides.</label>
+                            </li>
+                             <li>
+                                <label>Regular Plate</label>
+                                <label class="desc">Your choice of 2 item and 3 sides.</label>
+                            </li>
+                             <li>
+                                <label>Pita Wrap</label>
+                                <label class="desc">Authentic Pita wrap.</label>
+                            </li>
+                             <li>
+                                <label>Salad</label>
+                                <label class="desc">Mediterranean salad.</label>
+                            </li>
+                             <li>
+                                <label>Pita Bowl</label>
+                                <label class="desc">Pita wrap in a bowl.</label>
+                            </li>
+                             <li>
+                                <label>Burger</label>
+                                <label class="desc">Mediterranean-style burger.</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container">
+    <div class="row">
+    	<div class="col-xs-4">
+			<div class="panel cart">
+				<div class="panel-heading">
+					<div class="panel-title">
+						<div class="row">
+							<div class="col-xs-6">
+								<h5><span class="glyphicon glyphicon-shopping-cart"></span> Cart</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-6">
+							<h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
+						</div>
+						<div class="col-xs-6">
+							<div class="col-xs-6 text-right">
+								<h6><strong>$50.00</strong></h6>
+							</div>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" value="1">
+							</div>
+							<div class="col-xs-1">
+								<button type="button" class="btn btn-link btn-xs">
+									<span class="glyphicon glyphicon-trash"></span> Delete Item
+								</button>
+							</div>
+						</div>
+					</div>
+					<hr class="checkout-hr-border">
+					<div class="row">
+						<div class="text-center">
+							<div class="col-xs-9">
+								<h6 class="text-right">Subtotal</h6>
+                                <h6 class="text-right">Tax</h6>
+                                <h6 class="text-right">Delivery Fee</h6>
+                                <h6 class="text-right">Gratuity for the Driver</h6>
+							</div>
+							<div class="col-xs-3">
+								<h6 class="text-left">$50.00</h6>
+                                <h6 class="text-left">$4.75</h6>
+                                <h6 class="text-left">$3.95</h6>
+                                <h6 class="text-left">$5.00</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer cart-footer">
+					<div class="row">
+						<div class="col-xs-12 col-md-12 col-sm-12">
+							<h4 class="text-right">Total <strong>$50.00</strong></h4>
+						</div>
+                    </div>
+                    <div class="row text-center">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<button type="button" class="btn btn-block checkout">
+								Submit Order
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+            </div>
+        </div>
+
+{#    <footer class="page-footer center-on-small-only unique-color-dark pt-0">#}
+{##}
+{#    <div style="background-color: #6351ce;">#}
+{#        <div class="container">#}
+{#            <!--Grid row-->#}
+{#            <div class="row py-4 d-flex align-items-center">#}
+{##}
+{#                <!--Grid column-->#}
+{#                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">#}
+{#                    <h6 class="mb-0 white-text">Get connected with us on social networks!</h6>#}
+{#                </div>#}
+{#                <!--Grid column-->#}
+{##}
+{#                <!--Grid column-->#}
+{#                <div class="col-md-6 col-lg-7 text-center text-md-right">#}
+{#                    <!--Facebook-->#}
+{#                    <a class="icons-sm fb-ic ml-0"><i class="fa fa-facebook white-text mr-lg-4"> </i></a>#}
+{#                    <!--Twitter-->#}
+{#                    <a class="icons-sm tw-ic"><i class="fa fa-twitter white-text mr-lg-4"> </i></a>#}
+{#                    <!--Google +-->#}
+{#                    <a class="icons-sm gplus-ic"><i class="fa fa-google-plus white-text mr-lg-4"> </i></a>#}
+{#                    <!--Linkedin-->#}
+{#                    <a class="icons-sm li-ic"><i class="fa fa-linkedin white-text mr-lg-4"> </i></a>#}
+{#                    <!--Instagram-->#}
+{#                    <a class="icons-sm ins-ic"><i class="fa fa-instagram white-text mr-lg-4"> </i></a>#}
+{#                </div>#}
+{#                <!--Grid column-->#}
+{##}
+{#            </div>#}
+{#            <!--Grid row-->#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <!--Footer Links-->#}
+{#    <div class="container mt-5 mb-4 text-center text-md-left">#}
+{#        <div class="row mt-3">#}
+{##}
+{#            <!--First column-->#}
+{#            <div class="col-md-3 col-lg-4 col-xl-3 mb-r">#}
+{#                <h6 class="title font-bold"><strong>Company name</strong></h6>#}
+{#                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">#}
+{#                <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit#}
+{#                    amet, consectetur adipisicing elit.</p>#}
+{#            </div>#}
+{#            <!--/.First column-->#}
+{##}
+{#            <!--Second column-->#}
+{#            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-r">#}
+{#                <h6 class="title font-bold"><strong>Products</strong></h6>#}
+{#                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">#}
+{#                <p><a href="#!">MDBootstrap</a></p>#}
+{#                <p><a href="#!">MDWordPress</a></p>#}
+{#                <p><a href="#!">BrandFlow</a></p>#}
+{#                <p><a href="#!">Bootstrap Angular</a></p>#}
+{#            </div>#}
+{#            <!--/.Second column-->#}
+{##}
+{#            <!--Third column-->#}
+{#            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-r">#}
+{#                <h6 class="title font-bold"><strong>Useful links</strong></h6>#}
+{#                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">#}
+{#                <p><a href="#!">Your Account</a></p>#}
+{#                <p><a href="#!">Become an Affiliate</a></p>#}
+{#                <p><a href="#!">Shipping Rates</a></p>#}
+{#                <p><a href="#!">Help</a></p>#}
+{#            </div>#}
+{#            <!--/.Third column-->#}
+{##}
+{#            <!--Fourth column-->#}
+{#            <div class="col-md-4 col-lg-3 col-xl-3">#}
+{#                <h6 class="title font-bold"><strong>Contact</strong></h6>#}
+{#                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">#}
+{#                <p><i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>#}
+{#                <p><i class="fa fa-envelope mr-3"></i> info@example.com</p>#}
+{#                <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>#}
+{#                <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>#}
+{#            </div>#}
+{#            <!--/.Fourth column-->#}
+{##}
+{#        </div>#}
+{#    </div>#}
+{#    <!--/.Footer Links-->#}
+{##}
+{#    <!-- Copyright-->#}
+{#    <div class="footer-copyright">#}
+{#        <div class="container-fluid">#}
+{#            © 2017 Copyright: <a href="https://www.MDBootstrap.com"><strong> MDBootstrap.com</strong></a>#}
+{#        </div>#}
+{#    </div>#}
+{#    <!--/.Copyright -->#}
+{##}
+{#</footer>#}
+
+ </body>
+ </html>
